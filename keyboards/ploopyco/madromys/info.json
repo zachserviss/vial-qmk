@@ -1,8 +1,8 @@
 {
-    "keyboard_name": "Ploopy Adept Trackball",
+    "keyboard_name": "Adept",
     "url": "www.ploopy.co",
     "maintainer": "ploopyco",
-    "manufacturer": "Ploopy Corporation",
+    "manufacturer": "Ploopy",
     "processor": "RP2040",
     "bootloader": "rp2040",
     "usb": {

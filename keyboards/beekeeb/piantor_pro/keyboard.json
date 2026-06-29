@@ -1,6 +1,6 @@
 {
     "manufacturer": "beekeeb",
-    "keyboard_name": "piantor_pro",
+    "keyboard_name": "Piantor Pro",
     "maintainer": "beekeeb",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",

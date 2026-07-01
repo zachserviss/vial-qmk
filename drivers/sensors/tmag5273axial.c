@@ -55,7 +55,7 @@ void tmag5273axial_init(void) {
         addr = TMAG5273D1_I2C_ADDRESS;
     } else {
         // printf("No TMAG5273 device found; exiting\n");
-
+        return;
     }
 
     // Give found device the new device address

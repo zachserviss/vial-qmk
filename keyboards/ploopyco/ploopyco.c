@@ -187,18 +187,28 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         cycle_dpi();
     }
 
-    // NEW: Sniper mode handler - momentary DPI drop
-    if (keycode == DPI_SNIPER) {
-        if (record->event.pressed) {
-            uint16_t current_dpi = dpi_array[keyboard_config.dpi_config];
-            uint16_t sniper_dpi = current_dpi * 5;
-            pointing_device_set_cpi(sniper_dpi);
-        } else {
-            // When released, restore the configured DPI from EEPROM
-            pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
-        }
-        return false;
+// Sniper
+if (keycode == DPI_SNIPER) {
+    if (record->event.pressed) {
+        uint16_t current_dpi = dpi_array[keyboard_config.dpi_config];
+        uint16_t sniper_dpi;
+
+#ifdef IS_BEAN
+        // Bean: increase DPI
+        sniper_dpi = current_dpi * 10;
+#else
+        // Other devices: decrease DPI
+        sniper_dpi = current_dpi / 2;
+#endif
+
+        pointing_device_set_cpi(sniper_dpi);
+    } else {
+        // When released, restore the configured DPI from EEPROM
+        pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
     }
+    return false;
+}
+
 
     if (keycode == DRAG_SCROLL) {
 #ifdef PLOOPY_DRAGSCROLL_MOMENTARY

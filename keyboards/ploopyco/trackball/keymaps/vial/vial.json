@@ -13,6 +13,11 @@
       "shortName": "DPI"
     },
     {
+      "name": "DPI Sniper",
+      "title": "DPI Sniper",
+      "shortName": "Snipe"
+    },
+    {
       "name": "Drag Scroll",
       "title": "Drag Scroll",
       "shortName": "DragScl"

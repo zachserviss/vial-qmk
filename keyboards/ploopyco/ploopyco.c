@@ -193,7 +193,7 @@ if (keycode == DPI_SNIPER) {
         uint16_t current_dpi = dpi_array[keyboard_config.dpi_config];
         uint16_t sniper_dpi;
 
-#ifdef IS_BEAN
+#ifdef PLOOPY_BEAN
         // Bean: increase DPI
         sniper_dpi = current_dpi * 10;
 #else
